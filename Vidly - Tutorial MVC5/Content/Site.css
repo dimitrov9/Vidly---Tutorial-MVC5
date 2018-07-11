@@ -22,3 +22,7 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.navbar .navbar-nav .nav-item .navbar-link {
+    padding: 0 5px;
+}
