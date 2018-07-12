@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using Vidly___Tutorial_MVC5.Models;
 
@@ -9,26 +6,30 @@ namespace Vidly___Tutorial_MVC5.Controllers
 {
     public class CustomersController : Controller
     {
-        private IList<Customer> customers;
+        private ApplicationDbContext _context;
 
         public CustomersController()
         {
-            this.customers = new List<Customer>()
-            {
-                new Customer(){Id = 1, Name = "John Smith"},
-                new Customer(){Id = 2, Name = "Mary Williams"}
-            };
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
         }
 
         // GET: Customers
         public ActionResult Index()
         {
-            return View(customers.ToList());
+            var customers = _context.Customers.ToList();
+
+            return View(customers);
         }
 
         public ActionResult Details(int id)
         {
-            var customer = customers.FirstOrDefault(x => x.Id == id);
+            var customer = _context.Customers.SingleOrDefault(x => x.Id == id);
+
             if (customer == null)
                 return HttpNotFound();
 
