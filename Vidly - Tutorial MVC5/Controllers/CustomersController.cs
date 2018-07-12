@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Data.Entity;
 using System.Web.Mvc;
 using Vidly___Tutorial_MVC5.Models;
 
@@ -21,7 +22,7 @@ namespace Vidly___Tutorial_MVC5.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            var customers = _context.Customers.ToList();
+            var customers = _context.Customers.Include(x => x.MembershipType).ToList();
 
             return View(customers);
         }
