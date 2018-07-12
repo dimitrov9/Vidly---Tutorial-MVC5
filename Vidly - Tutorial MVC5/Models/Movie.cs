@@ -8,7 +8,7 @@ namespace Vidly___Tutorial_MVC5.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required,MaxLength(255)]
         public string Name { get; set; }
 
         [Required]
@@ -18,10 +18,10 @@ namespace Vidly___Tutorial_MVC5.Models
         public DateTime DateAdded { get; set; }
 
         [Required]
-        public int NumberInStock { get; set; }
+        public byte NumberInStock { get; set; }
 
         [ForeignKey(nameof(Genre)),Required]
-        public int GenreId { get; set; }
+        public byte GenreId { get; set; }
         public Genre Genre { get; set; }
     }
 }

@@ -1,8 +1,11 @@
-﻿namespace Vidly___Tutorial_MVC5.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Vidly___Tutorial_MVC5.Models
 {
     public class Genre
     {
-        public int Id { get; set; }
+        public byte Id { get; set; }
+        [Required,MaxLength(255)]
         public string Name { get; set; }
     }
 }
