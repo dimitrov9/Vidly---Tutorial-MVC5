@@ -227,10 +227,16 @@
     <Compile Include="Migrations\201807121654577_UpdateRecordsInMembershipType.Designer.cs">
       <DependentUpon>201807121654577_UpdateRecordsInMembershipType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807121716264_AddBirthdateToCustomer.cs" />
+    <Compile Include="Migrations\201807121716264_AddBirthdateToCustomer.Designer.cs">
+      <DependentUpon>201807121716264_AddBirthdateToCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
@@ -351,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807121654577_UpdateRecordsInMembershipType.resx">
       <DependentUpon>201807121654577_UpdateRecordsInMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807121716264_AddBirthdateToCustomer.resx">
+      <DependentUpon>201807121716264_AddBirthdateToCustomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

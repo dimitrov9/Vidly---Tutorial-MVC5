@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Vidly___Tutorial_MVC5.Models
@@ -9,7 +10,12 @@ namespace Vidly___Tutorial_MVC5.Models
 
         [Required, StringLength(255)]
         public string Name { get; set; }
+
         public bool IsSubscribedToNewsletter { get; set; }
+
+        [DataType(DataType.Date)]
+        [Column(TypeName = "Date")]
+        public DateTime? Birthdate { get; set; }
 
         [ForeignKey(nameof(MembershipType))]
         public byte MembershipTypeId { get; set; }
