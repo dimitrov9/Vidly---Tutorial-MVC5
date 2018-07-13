@@ -18,6 +18,7 @@ namespace Vidly___Tutorial_MVC5.Models
         public DateTime? Birthdate { get; set; }
 
         [ForeignKey(nameof(MembershipType))]
+        [Display(Name = "Membership Type")]
         public byte MembershipTypeId { get; set; }
         public MembershipType MembershipType { get; set; }
 
