@@ -8,13 +8,15 @@ namespace Vidly___Tutorial_MVC5.Models
     {
         public int Id { get; set; }
 
-        [Required, StringLength(255)]
+        [Required(ErrorMessage = "Please enter customer's name.")]
+        [StringLength(255)]
         public string Name { get; set; }
 
         public bool IsSubscribedToNewsletter { get; set; }
 
         [DataType(DataType.Date)]
         [Column(TypeName = "Date")]
+        [Min18YearsIfAMember]
         public DateTime? Birthdate { get; set; }
 
         [ForeignKey(nameof(MembershipType))]
