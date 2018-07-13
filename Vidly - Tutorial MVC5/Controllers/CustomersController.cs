@@ -27,6 +27,9 @@ namespace Vidly___Tutorial_MVC5.Controllers
             {
                 MembershipTypes = membershipTypes
             };
+
+            ViewBag.Title = "New Customer";
+
             return View("CustomerForm", viewModel);
         }
 
@@ -77,6 +80,8 @@ namespace Vidly___Tutorial_MVC5.Controllers
                 Customer = customer,
                 MembershipTypes = _context.MembershipTypes.ToList()
             };
+
+            ViewBag.Title = "Edit Customer";
 
             return View("CustomerForm", viewModel);
         }
