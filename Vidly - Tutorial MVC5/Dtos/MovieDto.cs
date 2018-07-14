@@ -23,5 +23,7 @@ namespace Vidly___Tutorial_MVC5.Dtos
         [Required]
         public byte GenreId { get; set; }
 
+        public GenreDto Genre { get; set; }
+
     }
 }

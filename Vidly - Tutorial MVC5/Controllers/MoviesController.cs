@@ -24,9 +24,7 @@ namespace Vidly___Tutorial_MVC5.Controllers
 
         public ActionResult Index()
         {
-            var movies = _context.Movies.Include(x => x.Genre).ToList();
-
-            return View(movies);
+            return View();
         }
 
         public ActionResult Details(int id)

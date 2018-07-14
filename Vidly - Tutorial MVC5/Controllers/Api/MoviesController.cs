@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Http;
 using AutoMapper;
@@ -24,7 +25,12 @@ namespace Vidly___Tutorial_MVC5.Controllers.Api
         // GET /api/movies
         public IHttpActionResult GetMovies()
         {
-            return Ok(_context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>));
+            var moviesDtos = _context.Movies
+                .Include(x => x.Genre)
+                .ToList()
+                .Select(Mapper.Map<Movie, MovieDto>);
+
+            return Ok(moviesDtos);
         }
 
         // GET /api/Movies/1
