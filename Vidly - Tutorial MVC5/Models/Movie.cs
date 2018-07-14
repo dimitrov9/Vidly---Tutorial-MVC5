@@ -21,10 +21,10 @@ namespace Vidly___Tutorial_MVC5.Models
         [Column(TypeName = "Date")]
         public DateTime DateAdded { get; set; }
 
-        [Required]
+        [Required, Range(1, 20)]
         public byte NumberInStock { get; set; }
 
-        [ForeignKey(nameof(Genre)), Required]
+        [ForeignKey(nameof(Genre))]
         public byte GenreId { get; set; }
         public Genre Genre { get; set; }
     }
