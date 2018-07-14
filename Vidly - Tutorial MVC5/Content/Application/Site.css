@@ -34,3 +34,11 @@ textarea {
 .input-validation-error {
     border: 2px solid red;
 }
+
+#customers .js-delete {
+    border: 0;
+}
+
+    #customers .js-delete:hover {
+        cursor: pointer;
+    }

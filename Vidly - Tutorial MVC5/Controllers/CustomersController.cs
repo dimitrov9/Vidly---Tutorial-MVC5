@@ -66,9 +66,7 @@ namespace Vidly___Tutorial_MVC5.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            var customers = _context.Customers.Include(x => x.MembershipType).ToList();
-
-            return View(customers);
+            return View();
         }
 
         public ActionResult Details(int id)

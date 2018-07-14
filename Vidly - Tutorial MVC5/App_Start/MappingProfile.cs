@@ -19,6 +19,9 @@ namespace Vidly___Tutorial_MVC5
                 .ForMember(x => x.DateAdded, opt => opt.Ignore())
                 .ForMember(x => x.Id, opt => opt.Ignore());
 
+            //Membership Type
+            Mapper.CreateMap<MembershipType, MembershipTypeDto>();
+
         }
     }
 }

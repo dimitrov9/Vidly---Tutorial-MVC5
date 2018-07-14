@@ -16,6 +16,7 @@ namespace Vidly___Tutorial_MVC5.Models
 
         [DataType(DataType.Date)]
         [Column(TypeName = "Date")]
+        [Display(Name = "Date of birth")]
         [Min18YearsIfAMember]
         public DateTime? Birthdate { get; set; }
 

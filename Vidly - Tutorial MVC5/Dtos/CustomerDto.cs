@@ -19,5 +19,7 @@ namespace Vidly___Tutorial_MVC5.Dtos
         public DateTime? Birthdate { get; set; }
 
         public byte MembershipTypeId { get; set; }
+
+        public MembershipTypeDto MembershipType { get; set; }
     }
 }

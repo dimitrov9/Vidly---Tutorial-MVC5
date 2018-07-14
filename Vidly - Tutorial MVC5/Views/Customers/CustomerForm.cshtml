@@ -19,8 +19,8 @@
         @Html.ValidationMessageFor(m => m.Customer.MembershipTypeId)
     </div>
     <div class="form-group">
-        <label for="@nameof(Model.Customer.Birthdate)">Date of Birth</label>
-        @Html.TextBoxFor(m => m.Customer.Birthdate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.LabelFor(m => m.Customer.Birthdate)
+        @Html.TextBoxFor(m => m.Customer.Birthdate, new { @type = "date", @class = "form-control", @Value = Model.Customer.Birthdate != null ? Model.Customer.Birthdate.Value.ToString("yyyy-MM-dd") : "" })
         @Html.ValidationMessageFor(m => m.Customer.Birthdate)
     </div>
     <div class="custom-checkbox">
