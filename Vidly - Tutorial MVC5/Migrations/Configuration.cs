@@ -73,6 +73,7 @@ namespace Vidly___Tutorial_MVC5.Migrations
             var password = "!Kurtasak123";
             var emailGuest = "guest@vidly.com";
             var testDrivingLicense = "TestLicense";
+            var testPhone = "+389777777777";
             if (!context.Users.Any(u => u.UserName == emailGuest))
             {
                 var store = new UserStore<ApplicationUser>(context);
@@ -81,7 +82,8 @@ namespace Vidly___Tutorial_MVC5.Migrations
                 {
                     UserName = emailGuest,
                     Email = emailGuest,
-                    DrivingLicense = testDrivingLicense
+                    DrivingLicense = testDrivingLicense,
+                    Phone = testPhone
                 };
 
                 manager.Create(user, password);
@@ -96,7 +98,8 @@ namespace Vidly___Tutorial_MVC5.Migrations
                 {
                     UserName = emailStoreManager,
                     Email = emailStoreManager,
-                    DrivingLicense = testDrivingLicense
+                    DrivingLicense = testDrivingLicense,
+                    Phone = testPhone
                 };
 
                 manager.Create(user, password);
