@@ -39,3 +39,7 @@ textarea {
 #customers .js-delete:hover {
     cursor: pointer;
 }
+
+.navbar-right li {
+    padding-right: 10px;
+}
