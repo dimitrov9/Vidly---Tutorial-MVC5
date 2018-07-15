@@ -51,11 +51,11 @@ namespace Vidly___Tutorial_MVC5.Migrations
             {
                 context.Movies.AddRange(new List<Movie>()
                 {
-                    new Movie(){Name = "Hangover",DateAdded = DateTime.Now,ReleaseDate = new DateTime(2009,06,02),NumberInStock = 5,GenreId = 1},
-                    new Movie(){Name = "Die Hard",DateAdded = DateTime.Now,ReleaseDate = new DateTime(1988,07,12),NumberInStock = 3,GenreId = 2},
-                    new Movie(){Name = "The Terminator",DateAdded = DateTime.Now,ReleaseDate = new DateTime(1984,10,26),NumberInStock = 5,GenreId = 2},
-                    new Movie(){Name = "Toy Story",DateAdded = DateTime.Now,ReleaseDate = new DateTime(1995,11,19),NumberInStock = 5,GenreId = 3},
-                    new Movie(){Name = "Titanic",DateAdded = DateTime.Now,ReleaseDate = new DateTime(1997,11,18),NumberInStock = 5,GenreId = 4},
+                    new Movie(){Name = "Hangover",DateAdded = DateTime.Now,ReleaseDate = new DateTime(2009,06,02),NumberInStock = 5,NumberAvaliable = 5,GenreId = 1},
+                    new Movie(){Name = "Die Hard",DateAdded = DateTime.Now,ReleaseDate = new DateTime(1988,07,12),NumberInStock = 3,NumberAvaliable = 3,GenreId = 2},
+                    new Movie(){Name = "The Terminator",DateAdded = DateTime.Now,ReleaseDate = new DateTime(1984,10,26),NumberInStock = 5,NumberAvaliable = 5,GenreId = 2},
+                    new Movie(){Name = "Toy Story",DateAdded = DateTime.Now,ReleaseDate = new DateTime(1995,11,19),NumberInStock = 5,NumberAvaliable = 5,GenreId = 3},
+                    new Movie(){Name = "Titanic",DateAdded = DateTime.Now,ReleaseDate = new DateTime(1997,11,18),NumberInStock = 5,NumberAvaliable = 5,GenreId = 4},
                 });
             }
 

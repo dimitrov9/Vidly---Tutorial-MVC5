@@ -24,6 +24,9 @@ namespace Vidly___Tutorial_MVC5.Models
         [Required, Range(1, 20)]
         public byte NumberInStock { get; set; }
 
+        [Range(0,20)]
+        public byte NumberAvaliable { get; set; }
+
         [ForeignKey(nameof(Genre))]
         public byte GenreId { get; set; }
         public Genre Genre { get; set; }

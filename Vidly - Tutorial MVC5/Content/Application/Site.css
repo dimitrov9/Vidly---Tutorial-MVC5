@@ -27,11 +27,13 @@ textarea {
     padding: 0 5px;
 }
 
-.field-validation-error {
+.field-validation-error,
+label.error {
     color: red;
 }
 
-.input-validation-error {
+.input-validation-error,
+input.error {
     border: 2px solid red;
 }
 
@@ -42,4 +44,8 @@ textarea {
 
 .navbar-right li {
     padding-right: 10px;
+}
+
+#-error {
+    display: none!important;
 }
