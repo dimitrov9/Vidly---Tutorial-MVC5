@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using Vidly___Tutorial_MVC5.Models;
 using System.Data.Entity;
 using System.Linq;
-using Microsoft.Owin.Security.Provider;
+using System.Runtime.Caching;
 using Vidly___Tutorial_MVC5.View_Models;
 
 namespace Vidly___Tutorial_MVC5.Controllers
@@ -43,7 +44,15 @@ namespace Vidly___Tutorial_MVC5.Controllers
         [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
-            var genres = _context.Genres.ToList();
+            var genresName = nameof(_context.Genres);
+
+            if (MemoryCache.Default[genresName] == null)
+            {
+                MemoryCache.Default[genresName] = _context.Genres.ToList();
+            }
+
+            var genres = MemoryCache.Default[genresName] as IEnumerable<Genre>;
+
             var viewModel = new MovieFormViewModel
             {
                 Genres = genres
@@ -96,9 +105,18 @@ namespace Vidly___Tutorial_MVC5.Controllers
             if (movie == null)
                 return HttpNotFound();
 
+            var genresName = nameof(_context.Genres);
+
+            if (MemoryCache.Default[genresName] == null)
+            {
+                MemoryCache.Default[genresName] = _context.Genres.ToList();
+            }
+
+            var genres = MemoryCache.Default[genresName] as IEnumerable<Genre>;
+
             var viewModel = new MovieFormViewModel(movie)
             {
-                Genres = _context.Genres.ToList()
+                Genres = genres
             };
             ViewBag.Title = "Edit Movie";
             return View("MovieForm", viewModel);
